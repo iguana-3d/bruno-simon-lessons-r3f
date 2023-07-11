@@ -20,6 +20,5 @@ body {
    background-attachment: fixed;
    background-size: cover;
    background-position: center;
-   background-color: lightskyblue;
 }
 `;

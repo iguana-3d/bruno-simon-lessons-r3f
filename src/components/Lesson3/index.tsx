@@ -7,7 +7,7 @@ import CustomObject from '../CustomObject';
 //Necessary create a orbit D ts
 extend({ OrbitControls });
 
-const TorusKnot: React.FC = () => {
+const Lesson3: React.FC = () => {
   const cubeRef = useRef<Mesh | null>(null);
   const groupRef = useRef<Group | null>(null);
   const { camera, gl } = useThree();
@@ -53,4 +53,4 @@ const TorusKnot: React.FC = () => {
   );
 };
 
-export default TorusKnot;
+export default Lesson3;
