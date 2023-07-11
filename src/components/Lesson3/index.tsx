@@ -12,7 +12,7 @@ const Lesson3: React.FC = () => {
   const groupRef = useRef<Group | null>(null);
   const { camera, gl } = useThree();
 
-  useFrame((state, delta) => {
+  useFrame((_state, delta) => {
     !!cubeRef.current && (cubeRef.current.rotation.y += delta);
 
     // const angle = state.clock.elapsedTime;
