@@ -1,10 +1,13 @@
 import React, { useRef } from 'react';
 import { Mesh } from 'three';
 import {
+  Text,
+  Float,
   OrbitControls,
   TransformControls,
   PivotControls,
   Html,
+  MeshReflectorMaterial,
 } from '@react-three/drei';
 import styled from 'styled-components';
 
@@ -19,8 +22,8 @@ const DivWrapped = styled.div`
 `;
 
 const Lesson4: React.FC = () => {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const cubeRef = useRef<Mesh | any>(null);
+  const cubeRef = useRef<Mesh | null>(null);
+  const sphereRef = useRef<Mesh | null>(null);
 
   return (
     <React.Fragment>
@@ -37,10 +40,15 @@ const Lesson4: React.FC = () => {
         scale={100}
         fixed={true} //relative a size
       >
-        <mesh position-x={-2}>
+        <mesh ref={sphereRef} position-x={-2}>
           <sphereGeometry />
           <meshStandardMaterial color="orange" />
-          <Html position={[1, 1, 0]} center>
+          <Html
+            position={[1, 1, 0]}
+            center
+            distanceFactor={6}
+            // occlude={[sphereRef, cubeRef]}
+          >
             <DivWrapped>This is a sphere 👍</DivWrapped>
           </Html>
         </mesh>
@@ -59,8 +67,28 @@ const Lesson4: React.FC = () => {
 
       <mesh position-y={-1} rotation-x={-Math.PI * 0.5} scale={10}>
         <planeGeometry />
-        <meshStandardMaterial color="greenyellow" />
+        {/* <meshStandardMaterial color="greenyellow" /> */}
+        <MeshReflectorMaterial
+          resolution={256} // Off-buffer resolution, lower=faster, higher=better quality, slower
+          mirror={0.5} // Mirror environment, 0 = texture colors, 1 = pick up env colors
+          blur={[1000, 1000]}
+          mixBlur={0.75}
+          color="greenyellow"
+        />
       </mesh>
+      <Float speed={5} floatIntensity={2}>
+        <Text
+          font="../public/bangers-v20-latin-regular.woff"
+          fontSize={1}
+          color="salmon"
+          position-y={2}
+          maxWidth={2}
+          textAlign="center"
+        >
+          I Love R3F
+          {/* <meshNormalMaterial /> */}
+        </Text>
+      </Float>
     </React.Fragment>
   );
 };
