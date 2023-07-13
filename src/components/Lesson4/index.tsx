@@ -78,7 +78,7 @@ const Lesson4: React.FC = () => {
       </mesh>
       <Float speed={5} floatIntensity={2}>
         <Text
-          font="../public/bangers-v20-latin-regular.woff"
+          font="/static/fonts/bangers-v20-latin-regular.woff"
           fontSize={1}
           color="salmon"
           position-y={2}
