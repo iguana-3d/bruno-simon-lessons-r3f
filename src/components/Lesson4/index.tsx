@@ -86,7 +86,9 @@ const Lesson4: React.FC = () => {
           textAlign="center"
         >
           I Love R3F
-          {/* <meshNormalMaterial /> */}
+          {/*
+           <meshNormalMaterial />
+            */}
         </Text>
       </Float>
     </React.Fragment>

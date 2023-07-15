@@ -4,14 +4,14 @@ import * as THREE from 'three';
 import { Vector3 } from 'three';
 // import Lesson3 from '../../components/Lesson3';
 import { HomeContainer } from './styles';
-import Lesson4 from '../../components/Lesson4';
+import Lesson44 from '../../components/Lesson44';
 
 const Home: React.FC = () => {
   const cameraSettings = {
     fov: 45,
     near: 0.1,
-    far: 300,
-    position: new Vector3(0, 5, 10),
+    far: 200,
+    position: new Vector3(-4, 3, 6),
   };
 
   return (
@@ -26,8 +26,7 @@ const Home: React.FC = () => {
         // linear
         camera={cameraSettings}
       >
-        {/* <Lesson3 /> */}
-        <Lesson4 />
+        <Lesson44 />
       </Canvas>
     </HomeContainer>
   );
