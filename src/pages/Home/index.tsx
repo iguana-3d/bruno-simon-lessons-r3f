@@ -17,6 +17,7 @@ const Home: React.FC = () => {
   return (
     <HomeContainer>
       <Canvas
+        shadows
         // dpr={[1, 2]} pixel ratio
         // flat is a tonemapping
         gl={{
