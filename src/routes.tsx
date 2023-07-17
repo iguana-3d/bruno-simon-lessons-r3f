@@ -7,7 +7,7 @@ const MainRoutes: React.FC = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="lesson-45" element={<Lesson45 />} />
+      <Route path="/lesson-45" element={<Lesson45 />} />
     </Routes>
   );
 };
