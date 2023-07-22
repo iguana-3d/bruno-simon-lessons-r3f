@@ -2,11 +2,11 @@ import React, { useRef } from 'react';
 import * as THREE from 'three';
 import {
   AccumulativeShadows,
-  BakeShadows,
+  // BakeShadows,
   OrbitControls,
   RandomizedLight,
   useHelper,
-  SoftShadows,
+  // SoftShadows,
 } from '@react-three/drei';
 import { Perf } from 'r3f-perf';
 import { useFrame } from '@react-three/fiber';
