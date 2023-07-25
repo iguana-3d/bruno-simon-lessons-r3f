@@ -2,10 +2,10 @@ import React, { useRef } from 'react';
 import * as THREE from 'three';
 import {
   Environment,
-  Stage,
+  // Stage,
   // Lightformer,
   // AccumulativeShadows,
-  ContactShadows,
+  // ContactShadows,
   // BakeShadows,
   OrbitControls,
   // RandomizedLight,
