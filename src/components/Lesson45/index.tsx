@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import * as THREE from 'three';
 import {
   Environment,
+  Stage,
   // Lightformer,
   // AccumulativeShadows,
   ContactShadows,
@@ -28,11 +29,11 @@ const Lesson45: React.FC = () => {
     !!cubeRef.current && (cubeRef.current.rotation.y += delta * 0.2);
   });
 
-  const { color, opacity, blur } = useControls('contact shadows', {
-    color: '#1D8F75',
-    opacity: { value: 0.4, min: 0, max: 1 },
-    blur: { value: 2.8, min: 0, max: 10 },
-  });
+  // const { color, opacity, blur } = useControls('contact shadows', {
+  //   color: '#1D8F75',
+  //   opacity: { value: 0.4, min: 0, max: 1 },
+  //   blur: { value: 2.8, min: 0, max: 10 },
+  // });
 
   // const { sunPosition } = useControls('sky', {
   //   sunPosition: { value: [1, 2, 3] },
@@ -75,8 +76,8 @@ const Lesson45: React.FC = () => {
           color="red"
           intensity={10}
           form="ring"
-        /> */}
-        {/* <mesh position-z={-5} scale={10}>
+        />
+      {/* <mesh position-z={-5} scale={10}>
           <planeGeometry />
           <meshBasicMaterial color={[10, 0, 0]} />
         </mesh> */}
@@ -107,7 +108,7 @@ const Lesson45: React.FC = () => {
         />
       </AccumulativeShadows> */}
 
-      <ContactShadows
+      {/* <ContactShadows
         position={[0, 0, 0]}
         scale={10}
         resolution={256}
@@ -116,7 +117,7 @@ const Lesson45: React.FC = () => {
         opacity={opacity}
         blur={blur}
         frames={1}
-      />
+      /> */}
 
       {/* <directionalLight
         ref={diretionalRef}
@@ -156,6 +157,32 @@ const Lesson45: React.FC = () => {
           envMapIntensity={envMapIntensity}
         />
       </mesh> */}
+      {/* <Stage
+        shadows={{ type: 'contact', opacity: 0.2, blur: 3 }}
+        environment="city"
+        intensity={0.5}
+      >
+        <mesh castShadow position-y={1} position-x={-2}>
+          <sphereGeometry />
+          <meshStandardMaterial
+            color="orange"
+            envMapIntensity={envMapIntensity}
+          />
+        </mesh>
+        <mesh
+          castShadow
+          position-y={1}
+          position-x={2}
+          scale={1.5}
+          ref={cubeRef}
+        >
+          <boxGeometry />
+          <meshStandardMaterial
+            color="mediumpurple"
+            envMapIntensity={envMapIntensity}
+          />
+        </mesh>
+      </Stage> */}
     </React.Fragment>
   );
 };
