@@ -1,6 +1,6 @@
 import { Canvas } from '@react-three/fiber';
 import React from 'react';
-import { Vector3, NoToneMapping } from 'three';
+import { Vector3 } from 'three';
 import { Lesson45Container } from './styles';
 import Lesson45Component from '../../components/Lesson45';
 
@@ -17,10 +17,10 @@ const Lesson45: React.FC = () => {
       <Canvas
         gl={{
           antialias: true,
-          toneMapping: NoToneMapping,
+          // toneMapping: NoToneMapping,
         }}
         camera={cameraSettings}
-        shadows
+        shadows={false}
       >
         <Lesson45Component />
       </Canvas>
